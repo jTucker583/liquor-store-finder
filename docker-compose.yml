@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  valhalla:
+    image: ghcr.io/valhalla/valhalla-scripted
+    container_name: valhalla
+    ports:
+      - "8002:8002"
+    volumes:
+      - ./osm_data:/custom_files
+    restart: unless-stopped
